@@ -216,6 +216,8 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Library\Cyberdrop.cs" />
+    <Compile Include="Library\MailRu.cs" />
+    <Compile Include="Library\_4Chan.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
@@ -225,6 +227,7 @@
     <Compile Include="Library\Imgur.cs" />
     <Compile Include="Modules\AppManager.cs" />
     <Compile Include="Modules\DownloadManager.cs" />
+    <Compile Include="Modules\RequestManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>

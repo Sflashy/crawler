@@ -18,15 +18,8 @@ namespace RC.Crawler
         {
             url = FixUrl(url);
 
-            AppManager.httpClientHandler.CookieContainer.Add(new Uri(url), new Cookie("over18", "1"));
-            HttpResponseMessage response = await AppManager.httpClient.GetAsync(url);
-            if (!response.IsSuccessStatusCode)
-            {
-                MessageBox.Show("Failed to connect to the imgur. please check the url.", "Connection Error!");
-                return;
-            }
-                
-            dynamic jsonData = JsonConvert.DeserializeObject(Regex.Match(response.Content.ReadAsStringAsync().Result, @"image\s+:(.*?),\s+group").Groups[1].Value);
+            RequestManager.httpClientHandler.CookieContainer.Add(new Uri(url), new Cookie("over18", "1"));
+            dynamic jsonData = JsonConvert.DeserializeObject(Regex.Match(await RequestManager.Request(url), @"image\s+:(.*?),\s+group").Groups[1].Value);
 
             DownloadManager.InitDownload((double)jsonData.album_images.count);
 

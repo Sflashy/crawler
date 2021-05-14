@@ -28,20 +28,22 @@ namespace RC.Crawler
                 return;
             }
                 
-            string searchType = Regex.Match(AppManager.mainWindow.Search.Text, @"http.*\/\/(.*?)\.").Groups[1].Value;
+
             if (AppManager.folderBrowser.ShowDialog() == System.Windows.Forms.DialogResult.Cancel) return;
 
             AppManager.DisableControls();
-            switch (searchType)
+            if(Search.Text.Contains("imgur.com"))
             {
-                case "imgur":
-                    await AppManager.imgur.Run(Search.Text);
-                    break;
-                case "cyberdrop":
-                    await AppManager.cyberdrop.Run(Search.Text);
-                    break;
+                await AppManager.imgur.Run(Search.Text);
             }
-
+            else if (Search.Text.Contains("4chan.org"))
+            {
+                await AppManager._4chan.Run(Search.Text);
+            }
+            else if (Search.Text.Contains("cyberdrop.me"))
+            {
+                await AppManager.cyberdrop.Run(Search.Text);
+            }
             AppManager.EnableControls();
         }
 
