@@ -8,6 +8,7 @@ Crawler is an album downloader bot made with .Net
 # Supported Websites
 cyberdrop.me
 imgur.com
+4chan.org
 
 # How to Use
-just enter a supported website album link and click download
+just enter a supported website link and click download
