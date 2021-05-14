@@ -1,10 +1,10 @@
-﻿<Window x:Class="Cubix.MainWindow"
+﻿<Window x:Class="Crawler.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:Cubix"
+        xmlns:local="clr-namespace:Crawler"
         mc:Ignorable="d"
         WindowStyle="None"
         FontFamily="Roboto"
@@ -15,7 +15,7 @@
         TextOptions.TextRenderingMode="Auto"
         WindowStartupLocation="CenterScreen"
         AllowsTransparency="True"
-        Title="Cubix" 
+        Title="Crawler" 
         Height="75" 
         Width="450"
         MouseLeftButtonDown="Drag">
@@ -33,7 +33,7 @@
         </Grid.RowDefinitions>
         <Grid Grid.Row="0" Background="#121212" Opacity="0.6"/>
         
-        <Label Content="Cubix" Grid.Row="0" Foreground="#DDBDBDBD"/>
+        <Label Content="Crawler" Grid.Row="0" Foreground="#DDBDBDBD"/>
         
         <Label Name="ExitApp" Grid.Row="0" Content="{materialDesign:PackIcon Kind=Close}" HorizontalAlignment="Right" 
                VerticalAlignment="Top" Foreground="#DDBDBDBD" MouseLeftButtonDown="ExitApplication" MouseEnter="ExitAppMouseEnter" 

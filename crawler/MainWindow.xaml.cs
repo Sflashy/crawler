@@ -1,10 +1,9 @@
 ﻿
-using System.Text.RegularExpressions;
 using System.Windows;
 using System.Windows.Input;
 using System.Windows.Media;
 
-namespace RC.Crawler
+namespace Crawler
 {
     public partial class MainWindow : Window
     {

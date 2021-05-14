@@ -4,7 +4,7 @@ using System.Net;
 using System.Threading.Tasks;
 using System.Windows;
 
-namespace RC.Crawler
+namespace Crawler
 {
     public static class DownloadManager
     {

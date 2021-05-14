@@ -4,13 +4,13 @@ using System.Net;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
 
-namespace RC.Crawler
+namespace Crawler
 {
     static class AppManager
     {
         private static readonly Random random = new Random();
         public static bool IsDownloading;
-        public static MainWindow mainWindow = (RC.Crawler.MainWindow)App.Current.MainWindow;
+        public static MainWindow mainWindow = (Crawler.MainWindow)App.Current.MainWindow;
         public static Imgur imgur = new Imgur();
         public static readonly WebClient webClient = new WebClient();
         public static FolderBrowserDialog folderBrowser = new FolderBrowserDialog();
