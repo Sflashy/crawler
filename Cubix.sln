@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31129.286
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RC.Crawler", "RC.Crawler\RC.Crawler.csproj", "{1D5A3604-B1F0-4D52-B849-B292DDEAA143}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cubix", "Cubix\Cubix.csproj", "{1D5A3604-B1F0-4D52-B849-B292DDEAA143}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

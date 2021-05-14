@@ -24,7 +24,7 @@ namespace RC.Crawler
             packIcon.Height = 25;
             packIcon.Width = 25;
             packIcon.Kind = PackIconKind.CancelCircle;
-            AppManager.mainWindow.DownloadButton.Content = packIcon;
+            mainWindow.DownloadButton.Content = packIcon;
             IsDownloading = true;
         }
         public static void EnableControls()
@@ -33,7 +33,7 @@ namespace RC.Crawler
             packIcon.Height = 25;
             packIcon.Width = 25;
             packIcon.Kind = PackIconKind.Download;
-            AppManager.mainWindow.DownloadButton.Content = packIcon;
+            mainWindow.DownloadButton.Content = packIcon;
             IsDownloading = false;
             mainWindow.DownloadProgress.Visibility = System.Windows.Visibility.Hidden;
         }

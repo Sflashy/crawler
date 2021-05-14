@@ -49,5 +49,13 @@ namespace RC.Crawler
 
         private void DownloadMouseEnter(object sender, MouseEventArgs e) => DownloadButton.Background = new SolidColorBrush(Color.FromRgb(30, 30, 30));
         private void DownloadMouseLeave(object sender, MouseEventArgs e) => DownloadButton.Background = Brushes.Transparent;
+
+        private void Search_TextChanged(object sender, System.Windows.Controls.TextChangedEventArgs e)
+        {
+            if (string.IsNullOrEmpty(Search.Text))
+                DownloadButton.IsEnabled = false;
+            else
+                DownloadButton.IsEnabled = true;
+        }
     }
 }
