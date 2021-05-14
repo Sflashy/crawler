@@ -1,5 +1,5 @@
 # Description
-RC.Crawler is an bulk album downloader made with .Net
+Crawler is an album downloader bot made with .Net
 
 # Screenshots
 ### MainWindow
