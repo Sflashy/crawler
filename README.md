@@ -2,5 +2,9 @@
 RC.Crawler is an bulk album downloader made with .Net
 
 # Screenshots
-### News
+### MainWindow
 ![MainWindow](/docs/images/MainWindow.png)
+
+# Supported Websites
+cyberdrop.me
+imgur.com
