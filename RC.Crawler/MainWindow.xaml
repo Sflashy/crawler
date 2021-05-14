@@ -46,7 +46,7 @@
                VerticalAlignment="Top" Margin="0,0,40,0" Foreground="#DDBDBDBD" MouseLeftButtonDown="MinimizeApplication" Cursor="Hand"
                ToolTip="Minimize" Height="24" Width="24"/>
 
-        <TextBox Name="Search" Text="https://cyberdrop.me/a/Ua6SK0k1" materialDesign:HintAssist.Hint="Enter an url" Grid.Row="1" Foreground="#DDBDBDBD" Padding="5" 
+        <TextBox Name="Search" Text="" materialDesign:HintAssist.Hint="only supported: cyberdrop, imgur" Grid.Row="1" Foreground="#DDBDBDBD" Padding="5" 
                  FontSize="15" VerticalContentAlignment="Center" BorderBrush="#DDBDBDBD" HorizontalAlignment="Left" Width="450"/>
         
         <Button Name="DownloadButton" Content="{materialDesign:PackIcon Kind=Download, Size=25}" Grid.Row="1" HorizontalAlignment="Right" 
