@@ -1,11 +1,14 @@
 ﻿
+using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Input;
 using System.Windows.Media;
+using Crawler.Managers;
+using Crawler.Services;
 
 namespace Crawler
 {
-    public partial class MainWindow : Window
+    public partial class MainWindow
     {
         public MainWindow()
         {
@@ -18,43 +21,34 @@ namespace Crawler
         private void ExitAppMouseEnter(object sender, MouseEventArgs e) => ExitApp.Background = new SolidColorBrush(Color.FromRgb(200, 10, 10));
         private void ExitAppMouseLeave(object sender, MouseEventArgs e) => ExitApp.Background = Brushes.Transparent;
 
-        private async void Download(object sender, RoutedEventArgs e)
+        private void Stop(object sender, RoutedEventArgs e)
         {
-            if (AppManager.IsDownloading)
-            {
-                DownloadManager.CancelDownload();
-                AppManager.IsDownloading = false;
-                return;
-            }
-                
+            DownloadManager.AbortDownload();
+        }
+        
+        private async void Start(object sender, RoutedEventArgs e)
+        {
+            if (UiManager.FolderBrowser.ShowDialog() == System.Windows.Forms.DialogResult.Cancel) return;
 
-            if (AppManager.folderBrowser.ShowDialog() == System.Windows.Forms.DialogResult.Cancel) return;
+            UiManager.DisableUi();
 
-            AppManager.DisableControls();
             if(Search.Text.Contains("imgur.com"))
             {
-                await AppManager.imgur.Run(Search.Text);
+                await CrawlerManager.Run(new Imgur(), Search.Text);
             }
             else if (Search.Text.Contains("4chan.org"))
             {
-                await AppManager._4chan.Run(Search.Text);
+                await CrawlerManager.Run(new _4Chan(), Search.Text);
             }
             else if (Search.Text.Contains("cyberdrop.me"))
             {
-                await AppManager.cyberdrop.Run(Search.Text);
+                await CrawlerManager.Run(new Cyberdrop(), Search.Text);
             }
-            AppManager.EnableControls();
+            UiManager.EnableUi();
         }
-
-        private void DownloadMouseEnter(object sender, MouseEventArgs e) => DownloadButton.Background = new SolidColorBrush(Color.FromRgb(30, 30, 30));
-        private void DownloadMouseLeave(object sender, MouseEventArgs e) => DownloadButton.Background = Brushes.Transparent;
-
         private void Search_TextChanged(object sender, System.Windows.Controls.TextChangedEventArgs e)
         {
-            if (string.IsNullOrEmpty(Search.Text))
-                DownloadButton.IsEnabled = false;
-            else
-                DownloadButton.IsEnabled = true;
+            DownloadButton.IsEnabled = !string.IsNullOrEmpty(Search.Text);
         }
     }
 }

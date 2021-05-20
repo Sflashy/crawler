@@ -50,8 +50,12 @@
                  FontSize="15" VerticalContentAlignment="Center" BorderBrush="#DDBDBDBD" HorizontalAlignment="Left" Width="450" TextChanged="Search_TextChanged"/>
         
         <Button Name="DownloadButton" Content="{materialDesign:PackIcon Kind=Download, Size=25}" Grid.Row="1" HorizontalAlignment="Right" 
-                VerticalAlignment="Top" Foreground="#DDBDBDBD" Background="Transparent" BorderThickness="0" Height="42" Click="Download" IsDefault="True"
-                MouseEnter="DownloadMouseEnter" MouseLeave="DownloadMouseLeave" Style="{StaticResource MaterialDesignFlatAccentBgButton}" IsEnabled="False"/>
+                VerticalAlignment="Top" Foreground="#DDBDBDBD" Background="#121212" Opacity="0.8" BorderThickness="0" Height="42" Click="Start" IsDefault="True"
+                Style="{StaticResource MaterialDesignFlatAccentBgButton}" IsEnabled="False"/>
+        
+        <Button Name="StopButton" Content="{materialDesign:PackIcon Kind=CancelCircle, Size=25}" Grid.Row="1" HorizontalAlignment="Right" 
+                VerticalAlignment="Top" Foreground="#DDBDBDBD" Background="#121212" Opacity="0.8" BorderThickness="0" Height="42" Click="Stop" IsDefault="True"
+                Style="{StaticResource MaterialDesignFlatAccentBgButton}" Visibility="Hidden"/>
         
         <ProgressBar Name="DownloadProgress" Grid.Row="2" Value="100" Maximum="100" Background="Transparent" Foreground="#DDBDBDBD" BorderThickness="0" 
                      VerticalAlignment="Bottom" materialDesign:TransitionAssist.DisableTransitions="True" Visibility="Hidden"/>

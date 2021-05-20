@@ -2,16 +2,16 @@
 using System.Threading.Tasks;
 using System.Windows;
 
-namespace Crawler
+namespace Crawler.Managers
 {
     public static class RequestManager
     {
-        public static HttpClientHandler httpClientHandler = new HttpClientHandler();
-        public static HttpClient httpClient = new HttpClient(httpClientHandler);
+        public static readonly HttpClientHandler HttpClientHandler = new HttpClientHandler();
+        private static readonly HttpClient HttpClient = new HttpClient(HttpClientHandler);
         public static async Task<string> Request(string url)
         {
-            httpClient.DefaultRequestHeaders.Add("User-Agent", "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:88.0) Gecko/20100101 Firefox/88.0");
-            HttpResponseMessage httpResponse = await httpClient.GetAsync(url);
+            HttpClient.DefaultRequestHeaders.Add("User-Agent", "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:88.0) Gecko/20100101 Firefox/88.0");
+            HttpResponseMessage httpResponse = await HttpClient.GetAsync(url);
             if(!httpResponse.IsSuccessStatusCode)
             {
                 MessageBox.Show("Failed to connect to the website. please check the url.", "Connection Error!");
